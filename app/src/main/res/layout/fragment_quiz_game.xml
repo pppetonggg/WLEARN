@@ -15,21 +15,32 @@
         android:background="#FFFFFF"
         >
 
-        <ImageView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/quiz_logo"
-            style="@style/ImageStyle"
-            >
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
 
-        </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="Quiz">
+            </TextView>
+
+        </FrameLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/MediumTextStyle"
+            android:layout_marginTop="20dp"
+            style="@style/QuestionTextStyle"
             tools:text="Which is the Independence day of Bangladesh?"
             android:text="@{quiz.currentQuestion.theQuestion}"
+            android:paddingVertical="20dp"
             />
 
         <ScrollView
@@ -40,6 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -47,6 +59,8 @@
                     android:id="@+id/option1"
                     tools:text="Option1"
                     android:text="@{quiz.answers[0]}"
+                    android:background="@drawable/answer_round_corner"
+                    android:paddingVertical="12dp"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -55,6 +69,8 @@
                     android:id="@+id/option2"
                     tools:text="Option1"
                     android:text="@{quiz.answers[1]}"
+                    android:background="@drawable/answer_round_corner"
+                    android:paddingVertical="12dp"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -63,6 +79,8 @@
                     android:id="@+id/option3"
                     tools:text="Option1"
                     android:text="@{quiz.answers[2]}"
+                    android:background="@drawable/answer_round_corner"
+                    android:paddingVertical="12dp"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -71,6 +89,8 @@
                     android:id="@+id/option4"
                     tools:text="Option1"
                     android:text="@{quiz.answers[3]}"
+                    android:background="@drawable/answer_round_corner"
+                    android:paddingVertical="12dp"
                     />
 
 

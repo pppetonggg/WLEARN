@@ -1,44 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<?xml version="1.0" encoding="UTF-8"?>
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" >
 
-    <TextView
-        android:id="@+id/topic_lesson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        style="@style/ImageStyle"
+    <LinearLayout
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/quiz_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="69dp">
-    </ImageView>
+        android:background="#FFFFFF"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/lesson"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+    <!-- ICP/IP OSI -->
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="15dp" android:text="TCP/IP and OSI Model" android:textColor="@android:color/black" android:textStyle="bold" android:textSize="18sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Internet Protocol (IP) version 4 (IPv4) is the current standard “IP” protocol used with TCP/IP — Transmission Control Protocol/Internet Protocol — which is the protocol for Internet addressing. Like the Open System Interconnection (OSI) model, TCP/IP has its own model." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="The OSI model and the TCP/IP models were both created independently. The TCP/IP network model represents reality in the world, whereas the OSI mode represents an ideal. With that said, the TCP/IP network model matches the standard layered network model as it should." android:layout_marginHorizontal="15dp"> </TextView>
+    <ImageView android:layout_height="match_parent" android:layout_width="match_parent" style="@style/ImageLessonStyle" android:src="@drawable/lesson_1_tcpip_osi"> </ImageView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="The TCP/IP network model has four basic layers:" android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text=" • Network interface (layer 1): Deals with all physical components of network connectivity between the network and the IP protocol" android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text=" • Internet (layer 2): Contains all functionality that manages the movement of data between two network devices over a routed network" android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text=" • Host-to-host (layer 3): Manages the flow of traffic between two hosts or devices, ensuring that data arrives at the application on the host for which it is targeted" android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text=" • Application (layer 4): Acts as final endpoints at either end of a communication session between two network hosts" android:layout_marginHorizontal="15dp"> </TextView>
 
+        <!-- ARQs -->
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="30dp" android:text="Atomatic Repeat Request (ARQs)" android:textColor="@android:color/black" android:textStyle="bold" android:textSize="18sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Automatic Repeat ReQuest (ARQ) is a group of error – control protocols for transmission of data over noisy or unreliable communication network. These protocols reside in the Data Link Layer and in the Transport Layer of the OSI (Open Systems Interconnection) reference model. They are named so because they provide for automatic retransmission of frames that are corrupted or lost during transmission. ARQ is also called Positive Acknowledgement with Retransmission (PAR)." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="ARQs are used to provide reliable transmissions over unreliable upper layer services. They are often used in Global System for Mobile (GSM) communication." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="In these protocols, the receiver sends an acknowledgement message back to the sender if it receives a frame correctly. If the sender does not receive the acknowledgement of a transmitted frame before a specified period of time, i.e. a timeout occurs, the sender understands that the frame has been corrupted or lost during transit. So, the sender retransmits the frame. This process is repeated until the correct frame is transmitted." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="Stop – and – Wait ARQ" android:textStyle="bold" android:layout_marginHorizontal="15dp"> </TextView>
+    <ImageView android:layout_height="match_parent" android:layout_width="match_parent" style="@style/ImageLessonStyle" android:src="@drawable/lesson_2_stopnwait"> </ImageView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="This protocol provides unidirectional data transmission with flow control and error control mechanisms, appropriate for noisy channels. The sender keeps a copy of the sent frame. It then waits for a finite time to receive a positive acknowledgement from receiver. If the timer expires, the frame is retransmitted. If a positive acknowledgement is received then the next frame is sent." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="Go – Back – N ARQ" android:textStyle="bold" android:layout_marginHorizontal="15dp"> </TextView>
+    <ImageView android:layout_height="match_parent" android:layout_width="match_parent" style="@style/ImageLessonStyle" android:src="@drawable/lesson_2_gobackn"> </ImageView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="This protocol provides for sending multiple frames before receiving the acknowledgement for the first frame. It uses the concept of sliding window, and so is also called sliding window protocol. The frames are sequentially numbered and a finite number of frames are sent. If the acknowledgement of a frame is not received within the time period, all frames starting from that frame are retransmitted." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="Selective Repeat ARQ" android:textStyle="bold" android:layout_marginHorizontal="15dp"> </TextView>
+    <ImageView android:layout_height="match_parent" android:layout_width="match_parent" style="@style/ImageLessonStyle" android:src="@drawable/lesson_2_selective_repeat"> </ImageView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="This protocol also provides for sending multiple frames before receiving the acknowledgement for the first frame. However, here only the erroneous or lost frames are retransmitted, while the good frames are received and buffered." android:layout_marginHorizontal="15dp"> </TextView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Routing Protocol -->
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="30dp" android:text="Routing protocols" android:textColor="@android:color/black" android:textStyle="bold" android:textSize="18sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="A routing protocol specifies how routers communicate with each other to distribute information that enables them to select routes between any two nodes on a computer network. Routers perform the traffic directing functions on the Internet; data packets are forwarded through the networks of the internet from router to router until they reach their destination computer. Routing algorithms determine the specific choice of route. Each router has a prior knowledge only of networks attached to it directly. A routing protocol shares this information first among immediate neighbors, and then throughout the network. This way, routers gain knowledge of the topology of the network. The ability of routing protocols to dynamically adjust to changing conditions such as disabled data lines and computers and route data around obstructions is what gives the Internet its fault tolerance and high availability." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="10dp" android:text="Distance vector protocols" android:textStyle="bold" android:layout_marginHorizontal="15dp"> </TextView>
+    <ImageView android:layout_height="match_parent" android:layout_width="match_parent" style="@style/ImageLessonStyle" android:src="@drawable/lesson_3_vector"> </ImageView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="As the name implies, distance vector routing protocols use distance to determine the best path to a remote network. The distance is something like the number of hops (routers) to the destination network." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="Distance vector protocols usually send the complete routing table to each neighbor (a neighbor is directly connected router that runs the same routing protocol). They employ some version of Bellman-Ford algorithm to calculate the best routes. Compared with link state routing protocols, distance vector protocols are easier to configure and require little management, but are susceptible to routing loops and converge slower than the link state routing protocols. Distance vector protocols also use more bandwidth because they send complete routing table, while the link state procotols send specific updates only when topology changes occur." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="10dp" android:text="Link state protocols" android:textStyle="bold" android:layout_marginHorizontal="15dp"> </TextView>
+    <ImageView android:layout_height="match_parent" android:layout_width="match_parent" style="@style/ImageLessonStyle" android:src="@drawable/lesson_3"> </ImageView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="Link state routing protocols are the second type of routing protocols. They have the same basic purpose as distance vector protocols, to find a best path to a destination, but use different methods to do so. Unlike distance vector protocols, link state protocols don’t advertise the entire routing table. Instead, they advertise information about a network toplogy (directly connected links, neighboring routers…), so that in the end all routers running a link state protocol have the same topology database. Link state routing protocols converge much faster than distance vector routing protocols, support classless routing, send updates using multicast addresses and use triggered routing updates. They also require more router CPU and memory usage than distance-vector routing protocols and can be harder to configure." android:layout_marginHorizontal="15dp"> </TextView>
+
+    <!-- TCP comgesyion control -->
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="30dp" android:text="TCP Congestion Control" android:textColor="@android:color/black" android:textStyle="bold" android:textSize="18sp" android:layout_marginBottom="10dp" android:layout_gravity="center_horizontal"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Transmission Control Protocol (TCP) uses a network congestion-avoidance algorithm that includes various aspects of an additive increase/multiplicative decrease (AIMD) scheme, along with other schemes including slow start and congestion window, to achieve congestion avoidance. The TCP congestion-avoidance algorithm is the primary basis for congestion control in the Internet.[1][2][3][4] Per the end-to-end principle, congestion control is largely a function of internet hosts, not the network itself. There are several variations and versions of the algorithm implemented in protocol stacks of operating systems of computers that connect to the Internet." android:layout_marginHorizontal="15dp"> </TextView>
+    <ImageView android:layout_height="match_parent" android:layout_width="match_parent" style="@style/ImageLessonStyle" android:src="@drawable/lesson_4_graph"> </ImageView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="10dp" android:text="Slow start" android:textStyle="bold" android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="Slow start is part of the congestion control strategy used by TCP in conjunction with other algorithms to avoid sending more data than the network is capable of forwarding, that is, to avoid causing network congestion. Although the strategy is referred to as slow start, its congestion window growth is quite aggressive, more aggressive than the congestion avoidance phase. Before slow start was introduced in TCP, the initial pre-congestion avoidance phase was even faster." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="Slow start begins initially with a congestion window size (CWND) of 1, 2, 4 or 10 MSS. The value for the congestion window size will be increased by one with each acknowledgement (ACK) received, effectively doubling the window size each round-trip time. The transmission rate will be increased by the slow-start algorithm until either a loss is detected, or the receiver's advertised window (rwnd) is the limiting factor, or ssthresh is reached. If a loss event occurs, TCP assumes that it is due to network congestion and takes steps to reduce the offered load on the network. These measurements depend on the exact TCP congestion avoidance algorithm used." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="10dp" android:text="Fast retransmit" android:textStyle="bold" android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:text="Fast retransmit is an enhancement to TCP that reduces the time a sender waits before retransmitting a lost segment. A TCP sender normally uses a simple timer to recognize lost segments. If an acknowledgement is not received for a particular segment within a specified time (a function of the estimated round-trip delay time), the sender will assume the segment was lost in the network, and will retransmit the segment." android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="10dp" android:text="Fast recovery" android:textStyle="bold" android:layout_marginHorizontal="15dp"> </TextView>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="30dp" android:text="Fast recovery was added with TCP Reno. When fast retransmit detects three duplicate ACKs, start the recovery process from congestion avoidance region and use ACKs in the pipe to pace the sending of packets." android:layout_marginHorizontal="15dp"> </TextView>
+</LinearLayout>
+
+</ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

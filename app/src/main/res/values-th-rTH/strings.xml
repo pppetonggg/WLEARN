@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WLEARNapp</string>
+    <string name="email">อีเมล์</string>
+    <string name="password">รหัสผ่าน</string>
+    <string name="first_name">ชื่อ</string>
+    <string name="last_name">นามสกุล</string>
+    <string name="login_title">ลงชื่อเข้าใช้</string>
+    <string name="create_act">สร้างบัญชี</string>
+    <string name="confirm_password">ยืนยันรหัสผ่าน</string>
+    <string name="etEmail">อีเมล์</string>
+    <string name="send_password_reset_email">รีเซ็ตรหัสผ่าน</string>
+    <string name="forgotpassword">ลืมรหัสผ่าน?</string>
+    <string name="donthaveeacc">ยังไม่มีบัญชี?</string>
+</resources>

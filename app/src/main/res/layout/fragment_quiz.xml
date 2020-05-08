@@ -4,38 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
     <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#FFFFFF">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <ImageView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/quiz_logo"
-            style="@style/ImageStyle"
+            android:background="@color/colorPrimary"
             >
-        </ImageView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/BigTextStyle"
-            android:text="Play Quiz"
-            android:layout_weight="1"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="50sp"
+                android:layout_gravity="center"
+                android:paddingVertical="150dp"
+                android:text="QUIZZES">
+            </TextView>
+        </FrameLayout>
 
         <Button
             android:id="@+id/btn_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:layout_gravity="center_horizontal|bottom"
-            android:text="Play"
-            >
-
-        </Button>
-
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:textSize="25sp"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="30dp"
+            android:text="Start" />
     </LinearLayout>
 </layout>

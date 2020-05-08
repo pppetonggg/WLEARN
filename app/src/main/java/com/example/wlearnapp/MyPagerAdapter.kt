@@ -14,8 +14,11 @@ class MyPagerAdapter(fm:FragmentManager):FragmentPagerAdapter(fm) {
             1->{
                 ExerciseTwo()
             }
+            2->{
+                 ExerciseThree()
+            }
             else->{
-                return ExerciseThree()
+                return ExerciseFour()
             }
 
             //this for tab position
@@ -23,16 +26,19 @@ class MyPagerAdapter(fm:FragmentManager):FragmentPagerAdapter(fm) {
     }
 
     override fun getCount(): Int {
-        return 3
+        return 4
         //this will return 3 tabs
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when(position){
-            0->"Exercise1"
-            1->"Exercise2"
+            0->"TCP/IP&\nOSI Model"
+            1->"ARQ"
+            2->{
+                "Routing\nProtocols"
+            }
             else->{
-                return "Exercise3"
+                return "TCP Congestion Control"
             }
             //set tab titles
         }

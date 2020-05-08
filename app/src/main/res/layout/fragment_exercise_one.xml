@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ExerciseOne">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="30dp"
+            android:text="Exercise 1">
+        </TextView>
+
+        <TextView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="1. A receiving host computes the checksum on a frame and determines that the frame is damaged. The frame is then discarded. At which OSI layer did this happen?">
+        </TextView>
+        <TextView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_green_dark"
+            android:text="Data Link layer \n     Explanation: When using the term “frame” we can easily recognize it belongs to the Data Link layer. In this layer, a Frame Check Sequence (FCS) field is added to the frame to verify that the frame data is received correctly.\n">
+        </TextView>
+        <TextView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.	An administrator issues the command ping 127.0.0.1 from the command line prompt on a PC. If a reply is received, what does this confirm?">
+        </TextView>
+        <TextView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_green_dark"
+            android:text="The PC has the TCP/IP protocol stack correctly installed. \n     Explanation: The address 127.0.0.1 is called loopback address. When we ping 127.0.0.1, in fact we are testing if the TCP/IP protocol suite is installed on our device.\n     Note: The address 127.0.0.1 does not have anything related with the NIC card. We still ping 127.0.0.1 even if we don’t have the NIC card.\n">
+        </TextView>
+        <TextView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.	A host is attempting to send data to another host on a different network. What is the first action that the sending host will take?">
+        </TextView>
+        <TextView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_green_dark"
+            android:text="Send the data frames to the default gateway. \n     Explanation: Before sending data, the sending host checks if the destination host is inside or outside the local network. If it is outside the local network, the data will be sent to the default gateway.\n\n\n\n\n">
+        </TextView>
+    </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

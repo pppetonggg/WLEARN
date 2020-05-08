@@ -1,14 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ExerciseTwo">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="25sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="30dp"
+                android:text="Exercise 2">
+            </TextView>
+
+            <TextView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="1.	If the bandwidth of the line is 1.5 Mbps, RTT is 45 milliseconds and packet size is 1 KB, then find the link utilization in stop and wait.">
+        </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="Answer: 10.8%
+\nExplanation:\nGiven-\tBandwidth = 1.5 Mbps\n\t\t\t\t\t\tRTT = 45 milliseconds\n\t\t\t\t\t\tPacket size = 1 KB
+\nCalculating Transmission Delay-
+\nTransmission delay (Tt)\n\t\t\t= Packet size / Bandwidth \n\t\t\t= 1 KB / 1.5 Mbps \n\t\t\t= (210 x 8 bits) / (1.5 x 106 bits/second) \n\t\t\t= 5.461 milliseconds
+\nCalculating Propagation Delay-
+\nPropagation delay (Tp) \t= Round Trip Time / 2 \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 45 milliseconds / 2
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 22.5 milliseconds
+\nCalculating Value Of ‘a’-
+\n\t\t\ta = Tp / Tt
+\n\t\t\ta = 22.5 milliseconds / 5.461 milliseconds
+\n\t\t\ta = 4.12
+\nCalculating Link Utilization-
+\nLink Utilization or Efficiency (η)\t\t= 1 / 1+2a
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 1 / (1 + 2 x 4.12)
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 1 / 9.24
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 0.108
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 10.8 %\n">
+            </TextView>
+
+            <TextView
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.	If the packet size is 1 KB and propagation time is 15 milliseconds, the channel capacity is 109 bits/second, then find the transmission time and utilization of sender in stop and wait protocol.">
+            </TextView>
+            <TextView
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="Answer: 0.341
+\nExplanation: 	\nGiven- \t\t\tPacket size = 1 KB
+\n\t\t\t\t\t\t\t\tPropagation time (Tp) = 15 milliseconds
+\n\t\t\t\t\t\t\t\tChannel capacity = 109 bits/second
+\nCalculating Transmission Delay-
+\nTransmission delay (Tt) \t\t= Packet size / Bandwidth
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 1 KB / 109 bits/second
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 210 bits / 109 bits/second
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 1.024 μseconds
+\nCalculating Value Of ‘a’-
+\n\t\t\t\ta = Tp / Tt
+\n\t\t\t\ta = 15 milliseconds / 1.024 μseconds
+\n\t\t\t\ta = 15000 μseconds / 1.024 μseconds
+\n\t\t\t\ta = 14648.46
+\nCalculating Sender Utilization-
+\nSender Utilization or Efficiency (η)	\t= 1 / 1+2a
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 1 / (1 + 2 x 1468.46)
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 1 / 29297.92
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 0.0000341
+\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t= 0.00341 %\n">
+            </TextView>
+
+            <TextView
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.	What is the maximum window size for data transmission using the selective repeat protocol with n bit frame sequence numbers?">
+            </TextView>
+            <TextView
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="Answer: 2^n-1
+\nExplanation: 	\nTotal number of sequence numbers possible = 2n.
+\nSender window size = receiver window size = W (say)
+\nFor any sliding window protocol to work without any problems, Min Available Sequence Numbers = Sender window size + Receiver window size
+\nSo, \t\t2^n \t\t = \t\t W + W
+\n\t\t\t\t2^n \t\t = \t\t 2W
+\n\t\t\t\t\tW \t\t = \t\t 2^n-1 \n\n\n\n\n">
+            </TextView>
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

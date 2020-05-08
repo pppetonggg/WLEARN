@@ -20,13 +20,12 @@ class QuizGameFragment : Fragment() {
     lateinit var binding: FragmentQuizGameBinding
     lateinit var currentQuestion: Question
     private var questionIndex = 0
-    val maxNumberOfQuestion = 5
+    val maxNumberOfQuestion = 10
     lateinit var answers:ArrayList<String>
     lateinit var selectedAnswer:String
     var wrongAnswerList:ArrayList<String> = ArrayList()
     var score = 0
 
-    // OSI TCP/IP Model
     var questions = arrayListOf<Question>(
         Question("What layer in the TCP/IP stack is equivalent to the Transport layer of the OSI model?",
             arrayListOf("Host-to-Host", "Application", "Network", "Network Access")),
@@ -37,12 +36,7 @@ class QuizGameFragment : Fragment() {
         Question("Which layer in the OSI reference model is responsible for determining the availability of the receiving program and checking to see if enough resources exist for that communication?",
             arrayListOf("Application", "Presentation", "Session", "Transport")),
         Question("Which layer of the OSI reference model uses the hardware address of a device to ensure message delivery to the proper host on a LAN?",
-            arrayListOf("Data Link", "Application", "Network", "Physical"))
-    )
-
-    /*
-    // ARQs
-    var questions = arrayListOf<Question>(
+            arrayListOf("Data Link", "Application", "Network", "Physical")),
         Question("In the _________ Protocol, the sender sends one frame, stops until it receives confirmation from the receiver, and then sends the next frame.",
             arrayListOf("Stop-and-Wait", "Simplest", "Go-Back-N ARQ", "Selective-Repeat ARQ")),
         Question("In the _________ Protocol, if no acknowledgment for a frame has arrived, we resend all outstanding frames.",
@@ -52,10 +46,7 @@ class QuizGameFragment : Fragment() {
         Question("Both Go-Back-N and Selective-Repeat Protocols use a _________.",
             arrayListOf("Sliding window", "Sliding frame", "Sliding packet", "Sliding protocol")),
         Question("In Selective Repeat ARQ, if 5 is the number of bits for the sequence number, then the maximum size of the send window must be ",
-            arrayListOf("16", "15", "31", "1"))
-    )
-        // Routing protocol
-    var questions = arrayListOf<Question>(
+            arrayListOf("16", "15", "31", "1")),
         Question("A network administrator uses the RIP routing protocol to implement routing within an autonomous system. What are characteristics of this protocol?",
             arrayListOf("It periodically sends complete routing tables to all connected devices.", "It displays an actual map of the network topology.", "It offers rapid convergence in large networks.", "It is beneficial in complex and hierarchically designed networks.")),
         Question("What is the first step OSPF and IS-IS routers take in building a shortest path first database?",
@@ -65,11 +56,7 @@ class QuizGameFragment : Fragment() {
         Question("A network administrator needs to configure a single router to load-balance the traffic over unequal cost paths. Which routing protocol should the administrator use?",
             arrayListOf("EIGRP", "OSPF", "RIPv1", "RIPv2")),
         Question("What should be considered when troubleshooting a problem with the establishment of neighbor relationships between OSPF routers?",
-            arrayListOf("Interface network type mismatch", "Administrative distance mismatch", "No loopback interface configured", "Gateway of last resort not redistributed"))
-    )
-
-    // TCP congestion control
-    var questions = arrayListOf<Question>(
+            arrayListOf("Interface network type mismatch", "Administrative distance mismatch", "No loopback interface configured", "Gateway of last resort not redistributed")),
         Question("The growth of congestion window takes place _________.",
             arrayListOf("Up to the size of receiver’s window", "Infinitely", "Up to Threshold", "Up to timeout")),
         Question("In the congestion avoidance algorithm, the size of the congestion window increases ____________ until congestion is detected.",
@@ -81,7 +68,6 @@ class QuizGameFragment : Fragment() {
         Question("The technique of ________ refers to a congestion control mechanism in which a congested node stops receiving data from the immediate upstream node or nodes.",
             arrayListOf("backpressure", "chock packet", "implicit signaling", "explicit signaling"))
     )
-    */
 
     private fun randomQuestion() {
         questions.shuffle()
@@ -122,30 +108,14 @@ class QuizGameFragment : Fragment() {
             getScore()
         }
     }
-/*
-    private fun getScore() {
-        if (score>=5) {
-            Toast.makeText(activity,"Won", Toast.LENGTH_SHORT).show()
-        }
-        else {
-            Toast.makeText(activity,"Lost", Toast.LENGTH_SHORT).show()
-        }
-    }
-*/
-
 
     private fun getScore() {
-        if(score>=5) {
-            Navigation.findNavController(view!!).navigate(R.id.action_quizGameFragment_to_quizWonFragment)
-        }
-        else {
-            //Navigation.findNavController(view!!).navigate(R.id.action_quizGameFragment_to_quizFragment)
-            //Navigation.findNavController(view!!).navigate(R.id.action_quizGameFragment_to_quizLostFragment)
-            Navigation.findNavController(view!!).navigate(R.id.action_quizGameFragment_to_quizLostFragment)
-            //Navigation.findNavController(view!!).navigate(R.id.action_quizGameFragment_to_quizWonFragment)
-        }
-    }
+        val text :String
+            Navigation.findNavController(view!!).navigate(R.id.action_quizGameFragment_to_quizFragment)
+            text = "Your score is "+score.toString()+"/10"
+            Toast.makeText(activity,text, Toast.LENGTH_LONG).show()
 
+    }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

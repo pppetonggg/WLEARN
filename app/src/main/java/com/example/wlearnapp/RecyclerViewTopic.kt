@@ -33,29 +33,34 @@ class RecyclerViewTopic : AppCompatActivity(), OnTopicItemClickListener {
     }
 
     fun addTopic(){
-        topiclist.add(Topic( "TCP/IP",
-            "Internet Protocol(IP)\nTransport Control Protocol/User Datagram Protocol(UDP)\nInternet Control Message Protoccol",
-            R.drawable.tcpip1))
-        topiclist.add(Topic( "OSI Model",
-            "Characteristics of OSI Model\nFunctions of the OSI Layers",
-            R.drawable.osimodel2))
-        topiclist.add(Topic( "Automatic Repeat Request",
-            "Stop-and-Wait ARQ\nGo-Back-N ARQ\nSelective Repeat ARQ/Selective Reject ARQ",
-            R.drawable.arq3))
-        topiclist.add(Topic( "Routing Protocols",
-            "Distance Vector(RIP,IGRP)\nLink State(OSPF,IS-IS)",
-            R.drawable.routing4))
-        topiclist.add(Topic( "TCP Congestion Control",
-            "Window Management\nEvolution of Congestion Control Algorithm",
-            R.drawable.last))
+        topiclist.add(Topic( "Learning",
+            "Internet Protocol(IP)\nTransport Control Protocol/User Datagram Protocol(UDP)" +
+                    "\nInternet Control Message \nCharacteristics of OSI Model\nFunctions of the OSI Layers\nStop-and-Wait ARQ\n" +
+                    "Go-Back-N ARQ\n" +
+                    "Selective Repeat ARQ/Selective Reject ARQDistance Vector(RIP,IGRP)\n" +
+                    "Link State(OSPF,IS-IS)\n\n",R.drawable.study))
+        topiclist.add(Topic( "Exercise",
+            "Practice helps improve skills and make you better at what you do. If you routinely practice a certain skill, you will get good at it.\n\n",R.drawable.practice))
+        topiclist.add(Topic( "Quiz",
+            "Exams and tests are a great way to assess what the students have learned with regards to particular subjects. Exams will show what part of the lesson each student seems to have taken the most interest in and has remembered\n\n",R.drawable.test))
+
     }
 
+
     override fun onItemClick(item: Topic, position: Int) {
-        //Toast.makeText(this,item.topics, Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, OptionActivity::class.java)
-        intent.putExtra("TOPICNAME",item.topics)
-        intent.putExtra("TOPICDES",item.description)
-        //intent.putExtra("IMAGE",item.image.toString())
+        var intent = Intent(this, LoginActivity::class.java)
+        if(position.toString() == "0"){
+            //Toast.makeText(this,position.toString(),Toast.LENGTH_SHORT).show()
+            intent = Intent(this, LessonActivity::class.java)
+        }else if(position.toString() == "1"){
+            intent = Intent(this, FragmentTab::class.java)
+        }else{
+            intent = Intent(this, QuizActivity::class.java)
+        }
+
+        //intent.putExtra("TOPICNAME",item.topics)
+        //intent.putExtra("TOPICDES",item.description)
+
         startActivity(intent)
     }
 }

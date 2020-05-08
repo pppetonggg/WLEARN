@@ -21,7 +21,7 @@
                 android:textSize="25sp"
                 android:textColor="@android:color/black"
                 android:layout_marginTop="30dp"
-                android:text="Exercise 3">
+                android:text="Exercise 4">
             </TextView>
 
             <TextView
@@ -29,43 +29,47 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="1.	Describe the differences of routing algorithms between RIP and OSPF.">
+                android:text="1.	What is the difference between “Flow Control” and “Congestion Control” as applied to TCP transmission?">
             </TextView>
             <TextView
                 android:layout_marginHorizontal="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/holo_green_dark"
-                android:text="     RIP belongs to the distance vector family in which the routing table information (i.e. distance vector) is advocated; OSPF belongs to the link state family in which only link state information is advocated. To calculate routes, RIP runs Bellman-Ford algorithm based on the routing table information; OSPF runs Dijkstra algorithm based on topology information.\n">
+                android:text="     Flow control is the receiver controlling how much the sender is injecting into the network, whereas Congestion Control is the sender sensing congestion on the network by timing ACKs and controlling its sending rate.\n">
             </TextView>
 
             <TextView
                 android:layout_marginHorizontal="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2.	Describe the differences of functionality and capability between RIP and OSPF.">
+                android:text="2.	Why does TCP Reno get rid of slow start phase when a triple duplicate ACK is received?">
             </TextView>
             <TextView
                 android:layout_marginHorizontal="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/holo_green_dark"
-                android:text="     Both algorithms compute the shortest path in the distributed way. Therefore, both generally produce the same routing results. In addition, RIP-2 supports S-38.121 Routing in Communication Networks Exercises 2001 authentication and multicasting, while OSPF supports multiple metrics, multiple areas, external routes, etc. OSPF consists of the Hello protocol, Exchange protocol and Flooding protocol, which are responsible for maintaining the link state database.\n">
+                android:text="     The receipt of triple duplicate ACKs indicates that some segments are getting through, and so congestion may be less severe. Thus, instead of wasting bandwidth, TCP tries a more aggressive strategy, by starting cwind at the current ssthreshold value rather than at 1 MSS. This is ½ the cwind value when the packet was dropped.\n">
             </TextView>
 
             <TextView
                 android:layout_marginHorizontal="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3.	Describe the differences of Stability between RIP and OSPF.">
+                android:text="3.	Assume that we change the code of TCP by modifying the congestion avoidance phase as follows. For every acknowledgement received, we increase the window size as in slow start. Give the pros and cons of this modification.">
             </TextView>
             <TextView
                 android:layout_marginHorizontal="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/holo_green_dark"
-                android:text="     Generally, RIP can keep stable if the network topology is relatively simple and if link failures are rare, but for large and complex networks RIP is quite unstable. It computes new routes after any change in the network topology, but in some cases very slowly by counting to infinity. During the time it takes to perform the computation, the network is left in a transient state where loops may occur and cause temporary congestion. OSPF can keep stable even in relatively large and complex networks.\n\n\n\n\n">
+                android:text="     This is roughly equivalent to performing multiplicative increase by a factor of 2, instead of additive increase. But we know that this is bad because it will not provide fairness.
+\n     •	Pros: if I am the only one doing this, I am more aggressive and will gain higher throughput, at the expense of others.
+\n     •	Cons: if everyone does this, the network will not distribute rates according to any form of fairness. Connections that have a high share (because the network was lightly loaded when they started) will continue tohave a higher share than others during periods of congestion.
+\n\n\n\n\n\n">
             </TextView>
+
 
         </LinearLayout>
     </ScrollView>
